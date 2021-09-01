@@ -1,0 +1,35 @@
+{
+  "name": "NoCrop for Twitter",
+  "action": {},
+  "manifest_version": 3,
+  "version": "21.8.0",
+  "description": "Remove the Twitter Image crop on desktop",
+  "permissions": ["storage"],
+  "homepage_url": "https://svenl.nl",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["https://twitter.com/*"],
+    "js": [
+      "data/inject.js"
+    ]
+  }],
+  "web_accessible_resources": [{
+    "resources": ["/data/code.js"],
+    "matches": ["https://twitter.com/*"]
+  }],
+  "options_ui": {
+    "page": "data/options/index.html"
+  },
+  "icons": {
+    "16": "data/icons/16.png",
+    "19": "data/icons/19.png",
+    "32": "data/icons/32.png",
+    "38": "data/icons/38.png",
+    "48": "data/icons/48.png",
+    "128": "data/icons/128.png",
+    "256": "data/icons/256.png",
+    "512": "data/icons/512.png"
+  }
+}

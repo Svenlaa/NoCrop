@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NoCrop for Twitter Options</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="tbl">
+    <input type="checkbox" id="noLimit">
+    <label for="noLimit">Don't limit the cropping at all. This should be disabled.</label>
+    <input type="checkbox" id="logs" value="true">
+    <label for="logs">Display logs in the console</label>
+  </div>
+  <hr>
+  <div class="tbl">
+    <input type="number" id="maxHeight" max="200" min="10">
+    <label for="maxHeight">% Limit the height of the images.</label>
+    <input type="number" id="updateSpeed" max="1000" min="1">
+    <label for="updateSpeed">ms between refresh. Lower looks better.</label>
+  </div>
+  <hr>
+  <p>
+    <button id="support">Support Me</button>
+    <button id="reset">Reset</button>
+    <button id="save">Save Options</button>
+    <span id="toast"></span>
+  </p>
+  <script src="index.js"></script>
+</body>
+</html>
