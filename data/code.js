@@ -10,10 +10,8 @@
     for (i=0;i<images.length;i++) {
       let element = images[i];
       if (element.currentSrc.includes("twimg.com/media/")) {
-        let height = element.height;
-        if (element.naturalHeight > element.naturalWidth) {
-          height = element.naturalHeight
-        }
+        let aspect = element.naturalHeight / element.naturalWidth
+        let height = aspect * element.width
         if (height > maxPixel) {height = maxPixel}
         let strHeight = height + "px";
         try {element.parentElement.parentElement.nextElementSibling.style.paddingBottom = strHeight}
