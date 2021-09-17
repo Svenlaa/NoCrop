@@ -1,6 +1,6 @@
 const prefs = {
   noLimit: 0,
-  maxHeight: 0.7,
+  maxHeight: 70,
   updateSpeed: 200,
   logs: 1
 };

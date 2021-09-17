@@ -1,16 +1,20 @@
 {
   const script = document.currentScript;
   const prefs = script.dataset;
-
-  if(prefs.logs == true) {console.log("NoCrop has booted")};
+  log("NoCrop has booted")
+  log("Your max height is " + prefs.maxHeight + "% of the browser")
+  log("The images update every " + prefs.updateSpeed + "ms")
   setInterval(function() {
-    let maxPixel = prefs.maxHeight * window.innerHeight;
+    let maxPixel = prefs.maxHeight / 100 * window.innerHeight;
     let images = document.getElementsByTagName("img")
     for (i=0;i<images.length;i++) {
       let element = images[i];
       if (element.currentSrc.includes("twimg.com/media/")) {
         let height = element.height;
-        if (prefs.noLimit == false && height > maxPixel) {height = maxPixel}
+        if (element.naturalHeight > element.naturalWidth) {
+          height = element.naturalHeight
+        }
+        if (height > maxPixel) {height = maxPixel}
         let strHeight = height + "px";
         try {element.parentElement.parentElement.nextElementSibling.style.paddingBottom = strHeight}
         catch(err){}
@@ -19,4 +23,7 @@
       };
     };
   }, prefs.updateSpeed);
+  function log(msg) {
+    if (prefs.logs) {console.log(msg)}
+  }
 }

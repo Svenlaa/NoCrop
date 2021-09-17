@@ -4,7 +4,7 @@ function restore() {
   chrome.storage.local.get({
     logs: true,
     noLimit: false,
-    maxHeight: 0.7,
+    maxHeight: 70,
     updateSpeed: 200
   }, prefs => {
     console.log(prefs);

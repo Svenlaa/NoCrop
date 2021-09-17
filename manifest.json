@@ -2,7 +2,7 @@
   "name": "NoCrop for Twitter",
   "action": {},
   "manifest_version": 3,
-  "version": "21.8.0",
+  "version": "21.9.0",
   "description": "Remove the Twitter Image crop on desktop",
   "permissions": ["storage"],
   "homepage_url": "https://svenl.nl",
